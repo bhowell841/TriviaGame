@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 // variable declaration
 var intervalId;
-var timer = 30;
+var timer = 45;
 var correct = 0;
 var incorrect = 0;
 var noAnswer = 0;
