@@ -1,0 +1,83 @@
+/* #003087;
+#0C2340; */
+
+body {
+    background-image: url(../images/pinstripes.jpg);
+    /* background-image: url(../images/yanks-back.jpg); */
+}
+
+.container {
+    display: none;
+    width: 800px;
+    height: 700px;
+    margin: auto;
+    background-color: #072340;
+    padding: 10px 50px 50px 50px;
+    border-radius: 50px;
+    border: 2px solid #ffffff; 
+    color: white;
+    font-family: sans-serif;  
+}
+
+.container h1 {
+    font-family: playball;
+    background-image: url(../images/pinstripes.jpg);
+    /* background-color: #cccccc; */
+    font-size: 60px;
+    text-align: center;
+    color: #003087;
+    padding: 2px 0px;
+    border-radius: 50px;
+}
+
+.grid #question {
+    font-family: monospace;
+    font-size: 50px;
+    color: #5a6772;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+#btn0, #btn1, #btn2, #btn3, .start, #doneButton {
+    background-color: #003087;
+    width: 250px;
+    font-size: 20px;
+    color: #fff;
+    font-family: playball;
+    border: 1px solid #1D3C6A;
+    border-radius: 50px;
+    margin: 10px 40px 10px 0px;
+    padding: 10px 10px;
+}
+
+#btn0:hover, #btn1:hover, #btn2:hover, #btn3:hover, #doneButton:hover, .start:hover {
+    cursor: pointer;
+    background-color: #57636e;
+}
+
+#btn0:focus, #btn1:focus, #btn2:focus, #btn3:focus, #doneButton:focus, .start:focus {
+    outline: 0;
+}
+
+#update{
+    font-family: playball;
+    color: #fff;
+    font-size: 18px;
+}
+
+#score {
+    color: #5A6772;
+    text-align: center;
+    font-size: 30px;
+}
+
+img {
+    height: 150px;
+    width: 300px;
+}
+
+p {
+    font-size: 30px;
+}
