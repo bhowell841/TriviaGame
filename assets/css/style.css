@@ -1,10 +1,16 @@
+.navbar {
+    height: 10px;
+
+}
+
 /* #003087;
 #0C2340; */
+/* 
 
 body {
     background-image: url(../images/pinstripes.jpg);
     /* background-image: url(../images/yanks-back.jpg); */
-}
+/* }
 
 .container {
     display: none;
@@ -23,14 +29,14 @@ body {
     font-family: playball;
     background-image: url(../images/pinstripes.jpg);
     /* background-color: #cccccc; */
-    font-size: 60px;
+    /* font-size: 60px;
     text-align: center;
     color: #003087;
     padding: 2px 0px;
     border-radius: 50px;
-}
+}  */
 
-.grid #question {
+/* .grid #question {
     font-family: monospace;
     font-size: 50px;
     color: #5a6772;
@@ -65,9 +71,9 @@ body {
     font-family: playball;
     color: #fff;
     font-size: 18px;
-}
+} */
 
-#score {
+/* #score {
     color: #5A6772;
     text-align: center;
     font-size: 30px;
@@ -80,4 +86,4 @@ img {
 
 p {
     font-size: 30px;
-}
+}  */

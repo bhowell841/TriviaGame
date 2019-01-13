@@ -3,105 +3,69 @@
 
 $(document).ready(function(){
 
-
+// variable declaration
+var intervalId;
+var timer = 30;
 var correct = 0;
 var incorrect = 0;
-var count = 0;
-var time = setTimeout(count, 10000);
-var rightAnswer =  new Audio("../assets/images/score.mp3");
-var gameOverSound = new Audio("../assets/images/sterling.mp3");
+var noAnswer = 0;
+
+var startSound = new Audio("../assets/images/score.mp3");
+var doneSound = new Audio("../assets/images/sterling.mp3");
 
 
-var correctAnswer = "";
-var incorrectAnswer = [];
-var userAnswer = [];
-  
+// button clicks
+$("#start").on('click', function() {
+    startSound.play();
+    $(this).hide();
+    reveal();
+    playGame();
+})
 
+$("#done").on('click', function() {
+    doneSound.play();
+    $("#start").hide();
+    hide();
+    results();
+    end();
+})
 
+$(window).on("load", hide);
 
-var questions = [{
-    question: "Yankees: First Base",
-    answers: ["C.C. Sabathia", "Aaron Judge", "Greg Bird", "Sonny Gray"],
-    correctAnswer: "Greg Bird",
-    image: "../assets/images/birdy.gif",
-    },
-    {
-    question: "Yankees: Second Base",
-    answers: ["Brett Gardener", "Gleyber Torres", "Zack Britton", "Didi Gregorious"],
-    correctAnswer: "Gleyber Torres",
-    image: "../assets/images/Gleyber.gif",
-    },
-    {
-    question: "Yankees: Closer",
-    answers: ["Aroldis Chapman", "Giancarlo Stanton", "Aaron Hicks", "Chad Green"],
-    correctAnswer: "Aroldis Chapman",
-    image: "../assets/images/chapman.gif",
-    },
-    {
-    question: "Yankees: Starter",
-    answers: ["Miguel Andujar","Gary Sanchez","Luke Voit","Luis Severino"],
-    correctAnswer: "Luis Severino",
-    image: "../assets/images/Sevy.gif",
-    }
-    // add ss, 3b, c, lf, cf, rf, dh
-];
+// function to create a results page
+function results(){
+    var finished = $("<h1>").html("THE YANKEES WIN!");
+    var correctAnswers = $("<p>").html("Correct Answers: " + correct);
+    var incorrectAnswers = $("<p>").html("Incorrect Answers: " + incorrect);
+    var unanswered = $("<p>").html("Unanswered: " + noAnswer);
+    // create a div to display the results
+    var summary = $('<div class="col-lg-6 col-lg-offset-6 text-center" id="summary">');
+    // append the stats to the div
+    summary.append(finished);
+    summary.append(correctAnswers);
+    summary.append(incorrectAnswers);
+    summary.append(unanswered);
+    // this was confusing, took forever
+    $(".row:nth(2)").append(summary);
+} // close results function
 
-// Start Click
-$("#startGame").on("click", function (){
-    // when the start button clicked, the div with the questions that was hidden is shown
-            $('.gameArea').show();
-            console.log('hello');
-    
-            $(this).hide();
-        });
+function timerCount(){
+    timer--;
 
-var number = 15;
-$('#timeLeft').on('click', run);
+    // Print to timer screen
+    $("#timer").html(" " + count + " seconds");
 
-// decrease the timer
-function decrement(){
-    number--;
-    $('#timeLeft').html('<h2>' + number + " seconds"+'</h2>');
     if (number === 0){
-    stop();
-    $('#message').html('time up!');
-    checkAnswers();
-    }
-}
+        $("#start").hide;
+        hide();
+        results();
+        end();
+    } // end if
+} // close timerCount function
 
-function run(){
-    counter = setInterval(decrement, 1000);
-}
-
-function stop(){
-    clearInterval(counter);
+function end() {
+    clearInterval(intervalId);
 }
 
 
-run();
-
-
-
-
-// //    $("#question").append("<img src=" + questions[0].image +">");
-// //    $("#question").append("<img src=" + questions[1].image +">");
-// //    $("#question").append("<img src=" + questions[2].image +">");
-// //    $("#question").append("<img src=" + questions[3].image +">");
-
-// //    $("#question").text(questions[0].question);
-   
-//    $("#choice0").text(questions[0].answers[0]);
-//    $("#choice1").text(questions[0].answers[1]);
-//    $("#choice2").text(questions[0].answers[2]);
-//    $("#choice3").text(questions[0].answers[3]);
-// //    var answer = questions[i].correctAnswer;
-//    console.log(questions[0].question);
-//    console.log(questions[0].answers[0]);
-//    console.log(questions[0].answers[1]);
-//    console.log(questions[0].answers[2]);
-//    console.log(questions[0].answers[3]);
-//    console.log(questions[0].correctAnswer);
-
-
-
-});
+}); //close document ready
