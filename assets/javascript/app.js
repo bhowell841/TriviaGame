@@ -10,8 +10,8 @@ var correct = 0;
 var incorrect = 0;
 var noAnswer = 0;
 
-var startSound = new Audio("../assets/images/score.mp3");
-var doneSound = new Audio("../assets/images/sterling.mp3");
+var startSound = new Audio("./assets/images/score.mp3");
+var doneSound = new Audio("./assets/images/sterling.mp3");
 
 
 // button clicks
